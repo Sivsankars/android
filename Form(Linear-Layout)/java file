@@ -1,0 +1,80 @@
+package com.example.form_linear_layout;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText fname,lname,dob,ph,em,pwd;
+    private Button b;
+    String fsname,lsname,db,mob,ml,psw;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        fname=(EditText) findViewById(R.id.fn);
+        lname=(EditText) findViewById(R.id.ln);
+        dob=(EditText) findViewById(R.id.db);
+        ph=(EditText) findViewById(R.id.phn);
+        em=(EditText) findViewById(R.id.mail);
+        pwd=(EditText) findViewById(R.id.pass);
+        b=(Button) findViewById(R.id.reg);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fsname=fname.getText().toString().trim();
+                lsname=lname.getText().toString().trim();
+                db=dob.getText().toString().trim();
+                mob=ph.getText().toString().trim();
+                ml=em.getText().toString().trim();
+                psw=pwd.getText().toString().trim();
+
+                if(fsname.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your first name", Toast.LENGTH_SHORT).show();
+                }
+                else if(lsname.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your last name", Toast.LENGTH_SHORT).show();
+                }
+                else if(db.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your date of birth", Toast.LENGTH_SHORT).show();
+                }
+                else if(mob.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your mobile number", Toast.LENGTH_SHORT).show();
+                }
+                else if(ml.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your email", Toast.LENGTH_SHORT).show();
+                }
+                else if(psw.equals(""))
+                {
+                    Toast.makeText(MainActivity.this, "Enter your password", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+        });
+
+
+
+
+
+
+    }
+}
